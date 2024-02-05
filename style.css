@@ -1,0 +1,82 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+
+    margin: 2rem 0;
+
+    width: auto;
+}
+.container_header {
+    width: 800px;
+}
+.container_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    border: springgreen 3px solid;
+    border-radius: 17px;
+    padding: 0.7rem 0;
+}
+
+.container_header nav ul {
+    display: flex;
+    flex-direction: row;
+
+    list-style: none;
+}
+.container_header nav ul li {
+    margin: 0 0.7rem;
+}
+
+
+/* section do quiz a baixo... */
+.container_quite {
+    display: flex;
+    flex-direction: row;
+}
+.container_quite section {
+    border: springgreen 3px solid;
+    border-radius: 23px;
+
+    margin: 0 2.3rem;
+    height: 70vh;
+}
+.container_quite section:first-child {
+    flex-grow: 0.7;
+}
+.container_quite section:last-child {
+    flex-grow: 2;
+}
+
+
+
+/* Ids e Class abaixo dicionados via Js ... */
+.flex-button #next {
+    padding: 1rem 1.3rem;
+    border-radius: 13px;
+    text-align: left;
+    margin: 0.9rem 0;
+}
+#quiz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#quiz h2 {
+    margin: 2rem 0;
+}
+.alternatives {
+    padding: 1rem 1.3rem;
+    border-radius: 13px;
+    width: 80%;
+    text-align: left;
+    margin: 0.7rem 0;
+}

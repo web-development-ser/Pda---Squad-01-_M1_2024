@@ -8,7 +8,7 @@
 3. Stéphanie Maria Câmdido dos Santos
 - [Git Hub](#)
 4. Antonio Sérgio Viana dos Santos
--[Git Hub](https://github.com/web-development-ser)
+- [Git Hub](https://github.com/web-development-ser)
 5. Sabrina Alves Marques
 - [Git Hub](#)
 6. Caio da Silva Sousa

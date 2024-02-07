@@ -7,9 +7,9 @@
 - [Git Hub](#)
 3. **Gestor/a do conhecimento:** _Stéphanie Maria Câmdido dos Santos_
 - [Git Hub](#)
-4. **Colaborador/a:** _Antonio Sérgio Viana dos Santos_
+4. Antonio Sérgio Viana dos Santos
 -[Git Hub](https://github.com/web-development-ser)
-5. **Colaborador/a:** _Sabrina Alves Marques_
+5. Sabrina Alves Marques
 - [Git Hub](#)
 6. **Colaborador/a:** _Caio da Silva Sousa_
 - [Git Hub](#)

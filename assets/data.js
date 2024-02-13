@@ -19,6 +19,13 @@ const dataQuiz = [
         question : "Quem foi o herói que matou a Medusa na mitologia grega?",
         alternatives : ["Perseu", "Teseu", "Hércules", "Jasão"],
         index_correct_question : 0
+
+    },
+    {
+        question : "Quem é o deus do sol na mitologia grega?",
+        alternatives : ["Hefesto", "Hélios", "Apolo", "Jasão"],
+        index_correct_question : 1
+
     }
 ];
 

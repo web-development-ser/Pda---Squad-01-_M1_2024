@@ -1,10 +1,60 @@
 // Importa as question, alternatives, e opção (alternatives) correta: index_correct_question;
 import dataQuiz from "./assets/data.js";
 
+// Variaveis de controle global, responsaveis por controlar as alternativas e quetões, além de controlar erros de index não existente na array importada;
+let index = 0;
+let i = 0;
+let array_data = [];
+
 // -----------------------------------------------------------------
-// Trata-se de pomtuação, correção das questões:
+// Função end_quiz_fim - Faz a analise dos dados que foram coletados na 'array_data', e demostra as alternativas que o usuario marcou correta ou certa assim escolha;
+const end_quiz_fim = () => {
+    let play_quest = document.getElementById('quiz');
+    play_quest.innerHTML = '';
+    let i = 0;
+    
+    while (i < array_data.length) {
+        if (array_data[i] && array_data[i].ops) {
+            play_quest.innerHTML += `<h3>${dataQuiz[array_data[i].quest].question}</h3>`;
+            if (array_data[i].ops == dataQuiz[i - 1].index_correct_question) {
+                play_quest.innerHTML += `<p><span>Correta:</span> ${dataQuiz[array_data[i].quest].alternatives[array_data[i].ops]}</p>`;
+            } else {
+                play_quest.innerHTML += `<p><span>Errada:</span> ${dataQuiz[array_data[i].quest].alternatives[array_data[i].ops]}</p>`;
+            }
+        } else {
+            console.log("???");
+        }
+        i++;
+    }
+};
+
+// Função finalizar - Troca o valor do 'onclick' por outro, afim de mostrar ao jogador as alternativas corretas;
+function finalizar () {
+    let end_quiz = document.getElementById('next');
+    end_quiz.innerHTML = "FINALIZAR...?";
+    end_quiz.onclick = end_quiz_fim;
+    // Zera o contador para finalizar...
+};
+
+
+// -----------------------------------------------------------------
+// Trata-se de pontuação, correção das questões:
+// O parametro 'score_pontos' responsavel por bloquear e anular quetão sem alternativa escolhida, além de repassar o valor da questão atual;
 function score (score_pontos) {
-    console.log("Pontos: ", score_pontos)
+    // Teste de validação abaixo;
+    // console.log("Pontos: ", score_pontos);
+    let obj_score_data = {
+        quest : '',
+        ops : ''
+    };
+    obj_score_data.quest = index - 1;
+    obj_score_data.ops = score_pontos;
+    // Teste de dados 'index' amazenado;
+    console.log(obj_score_data);
+    // Teste de dados amazenado;
+    console.log(array_data);
+    // Passa os valores para uma array, que amazena o index da questão, e opção escolhida;
+    return array_data[index] = obj_score_data;
 };
 
 // Função correct_question - Adiciona um atributo nas alternativas, sendo que o atributo é um index dos buttons existentes, quando clicados eles retornam um index para o Js.
@@ -20,9 +70,6 @@ function correct_question () {
 };
 
 // ------------------------------------------------------------
-// Variaveis de controle global, responsaveis por controlar as alternativas e quetões, além de controlar erros de index não existente na array importada;
-let index = 0;
-let i = 0;
 
 // Adiciona a descrição da questão:
 function indexQuestion (index) {
@@ -61,6 +108,11 @@ function next () {
     if (index <= (dataQuiz.length - 1)) {
         ops(index);
         index++;
+        // Descrição da 'função score()' a cima;
+        // score (0);
+    } else {
+        // finalizar - Finaliza o quiz;
+        finalizar();
     };
 };
 // Inicio - Acessa o id 'next', chamando a função usando 'onclick';

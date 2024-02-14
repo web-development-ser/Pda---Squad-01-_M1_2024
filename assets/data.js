@@ -17,8 +17,8 @@ const dataQuiz = [
     },
     {
         question : "Quem foi o herói que matou a Medusa na mitologia grega?",
-        alternatives : ["Perseu", "Teseu", "Hércules", "Jasão"],
-        index_correct_question : 0
+        alternatives : ["Jasão", "Teseu", "Hércules", "Perseu"],
+        index_correct_question : 3
 
     },
     {

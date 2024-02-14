@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Noto+Sans+Mono&family=Roboto+Mono:ital@0;1&display=swap');
+
+/* font-family: 'Kanit', sans-serif;
+font-family: 'Noto Sans Mono', monospace;
+font-family: 'Roboto Mono', monospace;
+*/
+
 * {
     padding: 0;
     margin: 0;
@@ -53,18 +60,47 @@ header {
     flex-grow: 0.7;
 }
 .container_quite section:last-child {
-    flex-grow: 2;
+    font-family: 'Kanit', sans-serif;
+    flex-grow: 1;
 }
 
 
 
 /* Ids e Class abaixo dicionados via Js ... */
-.flex-button #next {
-    padding: 1rem 1.3rem;
-    border-radius: 13px;
-    text-align: left;
-    margin: 0.9rem 0;
+.container_quiz {
+    height: 70vh;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+.flex-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.flex-button #next {
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.2rem;
+    width: 250px;
+
+    background: rgb(255, 243, 243);
+    padding: 0.6rem 0.9rem;
+    margin-top: 1rem;
+    border-bottom-color: greenyellow;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    /*
+    border: greenyellow solid 3px;
+    */
+    border-radius: 10px;
+}
+
+
 #quiz {
     display: flex;
     flex-direction: column;
@@ -73,10 +109,15 @@ header {
 #quiz h2 {
     margin: 2rem 0;
 }
+
 .alternatives {
-    padding: 1rem 1.3rem;
-    border-radius: 13px;
-    width: 80%;
-    text-align: left;
-    margin: 0.7rem 0;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.2rem;
+    width: 350px;
+    margin: 0.4rem 0;
+
+    background: rgb(255, 243, 243);
+    padding: 0.6rem 0.9rem;
+    border: greenyellow solid 3px;
+    border-radius: 10px;
 }

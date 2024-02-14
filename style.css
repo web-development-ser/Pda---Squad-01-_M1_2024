@@ -14,7 +14,6 @@ font-family: 'Roboto Mono', monospace;
 header {
     display: flex;
     justify-content: center;
-
     margin: 2rem 0;
 
     width: auto;
@@ -100,6 +99,19 @@ header {
     border-radius: 10px;
 }
 
+#next:hover {
+    color: greenyellow;
+    box-shadow: 0px 0px 4px greenyellow;
+    transition: .3s;
+    transform: scale(1.1);
+}
+
+button:hover{
+    color: greenyellow;
+    box-shadow: 0px 0px 4px greenyellow;
+    transform: scale(1.1);
+    padding: 16px 20px;
+}
 
 #quiz {
     display: flex;

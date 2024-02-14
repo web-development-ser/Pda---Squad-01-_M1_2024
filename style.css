@@ -11,7 +11,13 @@ font-family: 'Roboto Mono', monospace;
     box-sizing: border-box;
 }
 
+body {
+    background-image: url('./assets/img/fundo.jpg');
+}
+
 header {
+    font-family: 'Kanit', sans-serif;
+    color: azure;
     display: flex;
     justify-content: center;
     margin: 2rem 0;
@@ -42,7 +48,6 @@ header {
     margin: 0 0.7rem;
 }
 
-
 /* section do quiz a baixo... */
 .container_quite {
     display: flex;
@@ -56,13 +61,20 @@ header {
     height: 70vh;
 }
 .container_quite section:first-child {
-    flex-grow: 0.7;
+    padding: 2rem 3rem;
+    width: 40%;
 }
 .container_quite section:last-child {
     font-family: 'Kanit', sans-serif;
+    color: aliceblue;
     flex-grow: 1;
 }
 
+.container_team {
+    color: azure;
+    font-size: 1.2rem;
+    font-family: 'Kanit', sans-serif;
+}
 
 
 /* Ids e Class abaixo dicionados via Js ... */
@@ -87,7 +99,9 @@ header {
     background: rgb(255, 243, 243);
     padding: 0.6rem 0.9rem;
     margin-top: 1rem;
-    border-bottom-color: greenyellow;
+    /* border-bottom-color: greenyellow; */
+    background: none;
+    color: aliceblue;
     border-bottom-width: 3px;
     border-bottom-style: solid;
     border-top: none;
@@ -98,6 +112,9 @@ header {
     */
     border-radius: 10px;
 }
+#next:hover::before {
+    content: 'Próxima questão... ';
+}
 
 #next:hover {
     color: greenyellow;
@@ -106,7 +123,7 @@ header {
     transform: scale(1.1);
 }
 
-button:hover{
+button:hover {
     color: greenyellow;
     box-shadow: 0px 0px 4px greenyellow;
     transform: scale(1.1);
@@ -133,3 +150,11 @@ button:hover{
     border: greenyellow solid 3px;
     border-radius: 10px;
 }
+.alternatives:focus {
+    background-color: greenyellow;
+    color: white;
+    transition: 0.3s;
+}
+/*
+.alternatives:not(:focus) { ... }
+*/

@@ -30,8 +30,8 @@ const end_quiz_fim = () => {
 
 // Função finalizar - Troca o valor do 'onclick' por outro, afim de mostrar ao jogador as alternativas corretas;
 function finalizar () {
-    let end_quiz = document.getElementById('next');
-    end_quiz.innerHTML = "FINALIZAR...?";
+    let end_quiz = document.getElementById('outro');
+    end_quiz.innerHTML = "FINALIZAR!";
     end_quiz.onclick = end_quiz_fim;
     // Zera o contador para finalizar...
 };

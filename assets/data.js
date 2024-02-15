@@ -29,8 +29,8 @@ const dataQuiz = [
     },
     {
         question : "Quem construiu o labirinto do Minotauro?",
-        alternatives : ["Dédalo", "Ícaro", "Hefesto", "Atena"],
-        index_correct_question : 0
+        alternatives : ["Ícaro", "Dédalo", "Hefesto", "Atena"],
+        index_correct_question : 1
     },
     {
         question : "Qual é o símbolo de Hermes?",
@@ -39,8 +39,8 @@ const dataQuiz = [
     },
     {
         question : "Quem é o deus do sono na mitologia gregra",
-        alternatives : ["Hipnos", "Morfeu", "Orfeu", "Zeus"],
-        index_correct_question : 0
+        alternatives : ["Morfeu", "Hipnos", "Orfeu", "Zeus"],
+        index_correct_question : 1
     },
     {
         question : "Afrodite é casada com qual deus grego?",

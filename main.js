@@ -2,9 +2,29 @@
 import dataQuiz from "./assets/data.js";
 
 // Variaveis de controle global, responsaveis por controlar as alternativas e quetões, além de controlar erros de index não existente na array importada;
-let index = 0;
-let i = 0;
-let array_data = [];
+let index = 0; // contador principal das question, alternatives;
+let i = 0; // Contador principal global (while);
+let array_data = []; // Amazena os dados por indixes (question, alternatives);
+let sorteArray = []; // Amazena indixes por números;
+
+// -----------------------------------------------------------------
+
+
+
+// -----------------------------------------------------------------
+// Função sorte_question - Sorteia números baseado no tamanho do dataQuiz;
+const sorte_question = () => {
+    while (sorteArray.length < dataQuiz.length) {
+        let num = Math.floor(Math.random () * dataQuiz.length) + 1;
+        if (!sorteArray.includes (num)) {
+            sorteArray.push(num);
+        };
+    };
+    return sorteArray;
+}; let index_1 = sorte_question();
+// Abaixo testes;
+console.log(sorte_question()); // Test de sorte!
+console.log(dataQuiz[sorteArray[index]].question);
 
 // -----------------------------------------------------------------
 // Função end_quiz_fim - Faz a analise dos dados que foram coletados na 'array_data', e demostra as alternativas que o usuario marcou correta ou certa assim escolha;
@@ -36,7 +56,6 @@ function finalizar () {
     // Zera o contador para finalizar...
 };
 
-
 // -----------------------------------------------------------------
 // Trata-se de pontuação, correção das questões:
 // O parametro 'score_pontos' responsavel por bloquear e anular quetão sem alternativa escolhida, além de repassar o valor da questão atual;
@@ -47,7 +66,7 @@ function score (score_pontos) {
         quest : '',
         ops : ''
     };
-    obj_score_data.quest = index - 1;
+    obj_score_data.quest = sorteArray[index - 1]; // Ok...
     obj_score_data.ops = score_pontos;
     // Teste de dados 'index' amazenado;
     console.log(obj_score_data);
@@ -72,8 +91,10 @@ function correct_question () {
 // ------------------------------------------------------------
 
 // Adiciona a descrição da questão:
-function indexQuestion (index) {
-    document.getElementById('quiz').innerHTML = `<h2>${dataQuiz[index].question}</h2>`;
+function indexQuestion (index_question) {
+    if (sorteArray[index] >= 0 && sorteArray[index] < dataQuiz.length) {
+        document.getElementById('quiz').innerHTML = `<h2>${dataQuiz[index_question].question}</h2>`; // OK...
+      };
 };
 // Deixa a div com id quiz sem tags (Elementos):
 function removeAlternatives (alternativesOps) {
@@ -89,13 +110,18 @@ function ops (index) {
     //Função removeAlternatives - Deixa a div com id 'quiz' sem tags incialmente (Elementos) quando chamada:
     removeAlternatives (alternativesOps);
     // Função indexQuestion - Chama e adiciona a descrição da alternativa;
-    indexQuestion (index);
+    indexQuestion (sorteArray[index]); // OK...
 
     // Adiciona pelo Index da array importada as alternativas:
-    while (i < dataQuiz[index].alternatives.length) {
-        // Adiciona os buttons com class e id para processar a correção:
-        alternativesOps.innerHTML += `<button class="alternatives" id="index_correct" data-index="${i}">${dataQuiz[index].alternatives[i]}</button>`;
-        i++;
+    if (dataQuiz[sorteArray[index]] && dataQuiz[sorteArray[index]].alternatives) {
+        while (i < dataQuiz[sorteArray[index]].alternatives.length) {
+            // Adiciona os buttons com class e id para processar a correção:
+            alternativesOps.innerHTML += `<button class="alternatives" id="index_correct" data-index="${i}">${dataQuiz[sorteArray[index]].alternatives[i]}</button>`;
+            i++; // Ok...
+        };
+    } else {
+         // finalizar - Finaliza o quiz;
+        finalizar ();
     };
     // Função correct_question - Valida as alternativas:
     correct_question ();
@@ -111,7 +137,7 @@ function next () {
         // Descrição da 'função score()' a cima;
         // score (0);
     } else {
-        // finalizar - Finaliza o quiz;
+        // finalizar - Finaliza o quiz : funcionalidade futuras...
         finalizar();
     };
 };

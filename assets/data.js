@@ -6,7 +6,7 @@ const dataQuiz = [
         index_correct_question : 1
     },
     {
-        question : "Qual é o nome da deusa da sabedoria e da guerra estratégica?",
+        question : "Qual é o nome da deusa da sabedoria e da guerra?",
         alternatives : ["Afrodite", "Hera", "Atena", "Deméter"],
         index_correct_question : 2
     },
@@ -48,7 +48,7 @@ const dataQuiz = [
         index_correct_question : 1
     },
     {
-        question : "Qual o primeiro ser do universo, segundo a mitologia grega?",
+        question : "Qual o 1° ser do universo, segundo a mitologia grega?",
         alternatives : ["Gaia", "Urano", "Tártaro", "Caos"],
         index_correct_question : 3
     },
@@ -59,7 +59,7 @@ const dataQuiz = [
     },
     {
         question : "Qual foi o segundo trabalho de Hércules?",
-        alternatives : ["matar o leão de Nemeia", "capturar Cérbero", "matar a hidra de Lerna", "derrotar Medusa"],
+        alternatives : ["Matar o leão de Nemeia", "Capturar Cérbero", "Matar a hidra de Lerna", "Derrotar Medusa"],
         index_correct_question : 2
     },
     {

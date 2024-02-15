@@ -121,7 +121,6 @@ document.getElementById('next').onclick = next;
 // -----------------------------------------------------------------
 
 
-
 // -----------------------------------------------------------------
 const dataInfo = [
     {posicao: 'Líder', nome : "Amadeu Fernandes da Silva Neto"},
@@ -139,4 +138,5 @@ const initQuiz = () => {
         document.getElementById('iteg').innerHTML += `<p>${dataInfo[x].posicao}: <span>${dataInfo[x].nome}</span></p>`;
         x++;
     }
-}; initQuiz ();
+}; 
+initQuiz ();

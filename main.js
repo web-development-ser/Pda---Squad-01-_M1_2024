@@ -25,9 +25,12 @@ function exibirMensagemNivel() {
         scoreNivel.innerHTML = `<span>Nível Atual: ${3}</span>`;
         container_team.style.borderColor = "gold"
       } else if (progressoAtual >= 60 && progressoAtual < 80) {
-        scoreNivel.innerHTML = `<span>Nível Atual: ${4}</span>`;
+        scoreNivel.innerHTML = `<span>Nível Atual: ${4}</span>`; 
+        container_team.style.borderColor = "orange"
       } else if (progressoAtual >= 80) {
         scoreNivel.innerHTML = `<span>Nível Atual: ${5}</span>`;
+        container_team.style.borderColor = "red"
+
       };
 };
 

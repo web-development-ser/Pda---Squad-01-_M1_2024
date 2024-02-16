@@ -79,7 +79,7 @@ function verificarResposta(respostaUsuario) {
             // Aqui você pode decidir o que fazer ao finalizar todas as perguntas
         }
         } else {
-        alert('Resposta incorreta. Recomece o quiz.');
+            alert('Resposta incorreta. Recomece o quiz.');
         nivelAtual = 0;
         perguntasRespondidas = 0;
         indexPerguntaAtual = 0;
@@ -95,4 +95,5 @@ document.getElementById('start').onclick = function () {
     exibirPergunta();
     document.getElementById('start').style.display = 'none'; // Oculta o botão de início
     document.getElementById('text').style.display = 'none'; // Oculta o texto
+    document.getElementById('container_team').style.display = 'none';
 };

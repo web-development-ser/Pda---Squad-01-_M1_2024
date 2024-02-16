@@ -9,7 +9,24 @@ let sorteArray = []; // Amazena indixes por números;
 
 // -----------------------------------------------------------------
 
+// Função para verificar e exibir a mensagem do nível alcançado;
+function exibirMensagemNivel() {
+    let totalQuestion = dataQuiz.length;
+    let perguntasRespod = array_data.length;
+    perguntasRespod += 3;
+    let scoreNivel = document.getElementById('scoreNivel');
 
+    let progressoAtual = (perguntasRespod / totalQuestion) * 100;
+    if (progressoAtual >= 20 && progressoAtual < 40) {
+        scoreNivel.innerHTML = `<span>Nível Atual: ${2}</span>`;
+      } else if (progressoAtual >= 40 && progressoAtual < 60) {
+        scoreNivel.innerHTML = `<span>Nível Atual: ${3}</span>`;
+      } else if (progressoAtual >= 60 && progressoAtual < 80) {
+        scoreNivel.innerHTML = `<span>Nível Atual: ${4}</span>`;
+      } else if (progressoAtual >= 80) {
+        scoreNivel.innerHTML = `<span>Nível Atual: ${5}</span>`;
+      };
+};
 
 // -----------------------------------------------------------------
 // Função sorte_question - Sorteia números baseado no tamanho do dataQuiz;
@@ -130,6 +147,7 @@ function ops (index) {
 // Função next - Pula para proxima pergunta:
 function next () {
     i = 0;
+    exibirMensagemNivel();
     // Verifica se as 'question' acabaram na array importada linha:01:
     if (index <= (dataQuiz.length - 1)) {
         ops(index);

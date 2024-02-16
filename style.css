@@ -183,3 +183,29 @@ button:hover {
 /*
 .alternatives:not(:focus) { ... }
 */
+
+
+@media only screen and (max-width: 480px) {
+    .container_header {
+        margin: 0 0.4rem;
+        padding: 0.7rem 0.8rem;
+    }
+    .botão {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .container_quite {
+        flex-direction: column;
+        align-items: center;
+    }
+    .container_quite section:last-child {
+        margin: 0;
+        width: 90%;
+        height: auto;
+    }
+    .container_quite section:first-child {
+        margin: 0;
+        width: 90%;
+    }
+}

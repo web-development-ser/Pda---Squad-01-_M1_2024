@@ -1,14 +1,19 @@
-// -----------------------------------------------------------------
 import dataQuiz from "./assets/data.js";
 
+let nivelAtual = 1; // Inicializa o nível atual
+let perguntasRespondidas = 0; // Inicializa o contador de perguntas respondidas
+let indexPerguntaAtual = 0; // Inicializa o índice da pergunta atual
+let respostasCorretas = 0; // Inicializa o contador de respostas corretas
+
 const dataInfo = [
-    {posicao: 'Líder', nome : "Amadeu Fernandes da Silva Neto"},
-    {posicao: 'Comunicador', nome: "Kozikla Sanara Criri Rodrigues"},
-    {posicao: 'Gestor/a do conhecimento', nome: "Stéphanie Maria Câmdido dos Santos"},
-    {posicao: 'Colaborador/a', nome: "Antonio Sérgio Viana dos Santos"},
-    {posicao: 'Colaborador/a', nome: "Caio da Silva Sousa"},
-    {posicao: 'Colaborador/a', nome: "Sabrina Alves Marques"}
+    { posicao: 'Líder', nome: "Amadeu Fernandes da Silva Neto" },
+    { posicao: 'Comunicador', nome: "Kozikla Sanara Criri Rodrigues" },
+    { posicao: 'Gestor/a do conhecimento', nome: "Stéphanie Maria Câmdido dos Santos" },
+    { posicao: 'Colaborador/a', nome: "Antonio Sérgio Viana dos Santos" },
+    { posicao: 'Colaborador/a', nome: "Caio da Silva Sousa" },
+    { posicao: 'Colaborador/a', nome: "Sabrina Alves Marques" }
 ];
+
 const initQuiz = () => {
     let username = prompt("Como deseja ser chamado?");
     document.getElementById('user').innerHTML += username;
@@ -17,13 +22,9 @@ const initQuiz = () => {
         document.getElementById('iteg').innerHTML += `<p>${dataInfo[x].posicao}: <span>${dataInfo[x].nome}</span></p>`;
         x++;
     }
-}; 
-initQuiz ();
+};
+initQuiz();
 
-let nivelAtual = 1; // Inicializa o nível atual
-let perguntasRespondidas = 0; // Inicializa o contador de perguntas respondidas
-let indexPerguntaAtual = 0; // Inicializa o índice da pergunta atual
-let respostasCorretas = 0; // Inicializa o contador de respostas corretas
 
 function exibirMensagemNivel() {
     let totalPerguntas = dataQuiz.length;
@@ -31,16 +32,16 @@ function exibirMensagemNivel() {
     let container_team = document.getElementById('container_team');
     let progressoAtual = (perguntasRespondidas / totalPerguntas) * 100;
 
-        if (progressoAtual < 20) {
-            scoreNivel.innerHTML = `<span>Nível Atual: Fácil</span>`;
-            container_team.style.borderColor = "green";
-        } else if (progressoAtual >= 40 && progressoAtual < 60) {
-            scoreNivel.innerHTML = `<span>Nível Atual: Médio</span>`;
-            container_team.style.borderColor = "gold";
-        } else if (progressoAtual >= 80) {
-            scoreNivel.innerHTML = `<span>Nível Atual: Díficil</span>`;
-            container_team.style.borderColor = "red";
-        }
+    if (progressoAtual < 20) {
+        scoreNivel.innerHTML = `<span>Nível Atual: Fácil</span>`;
+        container_team.style.borderColor = "green";
+    } else if (progressoAtual >= 40 && progressoAtual < 60) {
+        scoreNivel.innerHTML = `<span>Nível Atual: Médio</span>`;
+        container_team.style.borderColor = "gold";
+    } else if (progressoAtual >= 80) {
+        scoreNivel.innerHTML = `<span>Nível Atual: Díficil</span>`;
+        container_team.style.borderColor = "red";
+    }
 };
 
 function exibirPergunta() {
@@ -59,6 +60,7 @@ function exibirPergunta() {
             verificarResposta(parseInt(alternativa.getAttribute('data-index')));
         };
     });
+
 };
 
 function verificarResposta(respostaUsuario) {
@@ -73,11 +75,21 @@ function verificarResposta(respostaUsuario) {
         if (indexPerguntaAtual < dataQuiz.length - 1) {
             indexPerguntaAtual++;
             exibirPergunta();
-        } else {
-            alert('Parabéns, você concluiu todas as perguntas!');
-            // Aqui você pode decidir o que fazer ao finalizar todas as perguntas
+        } if (respostasCorretas === 5) {
+            let containerRestart = document.getElementById('reiniciar');
+            // Criando o botão de reiniciar quando o quiz acaba
+            let restartButton = document.createElement('button');
+            restartButton.textContent = "Reiniciar";
+            restartButton.id = "restart";
+
+            containerRestart.appendChild(restartButton);
+            restartButton.onclick = function () {
+                initQuiz();
+            };
         }
-        } else {
+
+
+    } else {
         alert('Resposta incorreta. Recomece o quiz.');
         nivelAtual = 0;
         perguntasRespondidas = 0;

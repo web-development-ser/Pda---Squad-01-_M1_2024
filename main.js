@@ -15,12 +15,15 @@ function exibirMensagemNivel() {
     let perguntasRespod = array_data.length;
     perguntasRespod += 3;
     let scoreNivel = document.getElementById('scoreNivel');
+    let container_team = document.getElementById('container_team');
 
     let progressoAtual = (perguntasRespod / totalQuestion) * 100;
     if (progressoAtual >= 20 && progressoAtual < 40) {
         scoreNivel.innerHTML = `<span>Nível Atual: ${2}</span>`;
+        container_team.style.borderColor = "green"
       } else if (progressoAtual >= 40 && progressoAtual < 60) {
         scoreNivel.innerHTML = `<span>Nível Atual: ${3}</span>`;
+        container_team.style.borderColor = "gold"
       } else if (progressoAtual >= 60 && progressoAtual < 80) {
         scoreNivel.innerHTML = `<span>Nível Atual: ${4}</span>`;
       } else if (progressoAtual >= 80) {

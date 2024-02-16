@@ -37,9 +37,10 @@ header {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    border: rgb(255, 102, 0) 3px solid;
+    border:brown 3px solid;
     border-radius: 17px;
     padding: 0.7rem 0;
+    background-color: brown;
 }
 
 .container_header nav ul {
@@ -60,7 +61,7 @@ header {
 }
 
 .container_quite section {
-    border: rgb(255, 136, 0) 3px solid;
+    border: brown 3px solid;
     border-radius: 23px;
     margin: 0 2.3rem;
     height: 70vh;

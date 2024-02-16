@@ -13,6 +13,10 @@ font-family: 'Roboto Mono', monospace;
 
 body {
     background-image: url('./assets/img/fundo.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
 }
 
 header {
@@ -117,24 +121,6 @@ header {
     border-radius: 10px;
 }
 
-.flex-button #restart {
-    font-family: 'Kanit', sans-serif;
-    font-size: 1.2rem;
-    width: 250px;
-    background: rgb(255, 243, 243);
-    padding: 0.6rem 0.9rem;
-    margin-top: 1rem;
-    border-bottom-color: rgb(255, 136, 0);
-    background: rgb(255, 136, 0);
-    color: aliceblue;
-    border-bottom-width: 3px;
-    border-bottom-style: solid;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-radius: 10px;
-}
-
 #start:hover::after {
     content: ' Quiz';
 }
@@ -183,30 +169,3 @@ button:hover {
 /*
 .alternatives:not(:focus) { ... }
 */
-
-
-@media only screen and (max-width: 480px) {
-    .container_header {
-        margin: 0 0.4rem;
-        padding: 0.7rem 0.8rem;
-    }
-    .botão {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    .container_quite { 
-        
-        flex-direction: column;
-        align-items: center;
-    }
-    .container_quite section:last-child {
-        margin: 0;
-        width: 90%;
-        height: auto;
-    }
-    .container_quite section:first-child {
-        margin: 0;
-        width: 90%;
-    }
-}

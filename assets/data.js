@@ -9,7 +9,7 @@ const dataQuiz = [
     {
         question: "2. Quem é o deus do sol na mitologia grega?",
         alternatives: ["Hefesto", "Hélios", "Apolo", "Jasão"],
-        index_correct_question: 1
+        index_correct_question: 2
     },
 
     {

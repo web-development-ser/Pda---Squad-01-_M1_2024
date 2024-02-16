@@ -1,0 +1,57 @@
+@media screen and (max-width: 700px) {
+    .container_quite {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container_team {
+        font-size: 18px
+    }
+
+    #text {
+        font-size: 20px;
+        text-align: center;
+        margin-top: 10px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    #button {
+        margin-block-end: 20px;
+    }
+}
+
+    .container_header {
+        margin: 0 0.4rem;
+        padding: 0.7rem 0.8rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .botão {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .container_quite section:last-child {
+        margin: 0;
+        width: 90%;
+        height: auto;
+    }
+
+    .container_quite section:first-child {
+        margin: 0;
+        width: 90%;
+    }
+
+    .container_quiz {
+        font-size: 15px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }

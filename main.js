@@ -4,7 +4,7 @@ import dataQuiz from "./assets/data.js";
 const dataInfo = [
     {posicao: 'Líder', nome : "Amadeu Fernandes da Silva Neto"},
     {posicao: 'Comunicador', nome: "Kozikla Sanara Criri Rodrigues"},
-    {posicao: 'Gestor/a do conhecimento', nome: "Stéphanie Maria Câmdido dos Santos"},
+    {posicao: 'Gestor/a do conhecimento', nome: "Stéphanie Maria Cândido dos Santos"},
     {posicao: 'Colaborador/a', nome: "Antonio Sérgio Viana dos Santos"},
     {posicao: 'Colaborador/a', nome: "Caio da Silva Sousa"},
     {posicao: 'Colaborador/a', nome: "Sabrina Alves Marques"}
@@ -60,6 +60,7 @@ function exibirPergunta() {
         };
     });
 };
+
 
 function verificarResposta(respostaUsuario) {
     let perguntaAtual = dataQuiz[indexPerguntaAtual];

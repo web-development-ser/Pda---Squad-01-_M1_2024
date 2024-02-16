@@ -117,7 +117,7 @@ header {
     border-radius: 10px;
 }
 
-.flex-button #next {
+.flex-button #restart {
     font-family: 'Kanit', sans-serif;
     font-size: 1.2rem;
     width: 250px;
@@ -135,8 +135,8 @@ header {
     border-radius: 10px;
 }
 
-#start:hover::before {
-    content: 'Próximas ';
+#start:hover::after {
+    content: ' Quiz';
 }
 
 #start:hover {

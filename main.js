@@ -28,18 +28,18 @@ let respostasCorretas = 0; // Inicializa o contador de respostas corretas
 function exibirMensagemNivel() {
     let totalPerguntas = dataQuiz.length;
     let scoreNivel = document.getElementById('scoreNivel');
-    let container_team = document.getElementById('container_team');
+    let container_quiz = document.getElementById('container_quiz');
     let progressoAtual = (perguntasRespondidas / totalPerguntas) * 100;
 
         if (progressoAtual < 20) {
-            scoreNivel.innerHTML = `<span>Nível Atual: Fácil</span>`;
-            container_team.style.borderColor = "green";
+            scoreNivel.innerHTML = `<br> <span>Nível Atual: Fácil</span>`;
+            container_quiz.style.borderColor = "green";
         } else if (progressoAtual >= 40 && progressoAtual < 60) {
-            scoreNivel.innerHTML = `<span>Nível Atual: Médio</span>`;
-            container_team.style.borderColor = "gold";
+            scoreNivel.innerHTML = `<br> <span>Nível Atual: Médio</span>`;
+            container_quiz.style.borderColor = "gold";
         } else if (progressoAtual >= 80) {
-            scoreNivel.innerHTML = `<span>Nível Atual: Díficil</span>`;
-            container_team.style.borderColor = "red";
+            scoreNivel.innerHTML = `<br> <span>Nível Atual: Díficil</span>`;
+            container_quiz.style.borderColor = "red";
         }
 };
 
@@ -75,7 +75,7 @@ function verificarResposta(respostaUsuario) {
             indexPerguntaAtual++;
             exibirPergunta();
         } else {
-            alert('Parabéns, você concluiu todas as perguntas!');
+            alert('Parabéns, agora você sabe mais curiosidades sobre mitologia grega!');
             // Aqui você pode decidir o que fazer ao finalizar todas as perguntas
         }
         } else {
